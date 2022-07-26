@@ -14,7 +14,7 @@ export default class MyDocument extends Document {
             <Html>
                 <Head>
                     {/* @ts-ignore */}
-                    <meta charset="UTF-8" />
+                    <meta charSet="UTF-8" />
                     <meta name="description" content="Download youtube videos free" />
                     <meta name="keywords" content="youtube videos download free platform" />
                     <meta name='author' content='Pablo Silva' />
