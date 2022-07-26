@@ -1,10 +1,11 @@
 import { NextPage } from "next"
+import { Container } from "../styles"
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <Container>
       <p>okll</p>
-    </div>
+    </Container>
   )
 }
 
