@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router'
-import { Container } from './styles';
+import { Container, Main } from './styles';
 import { Header } from '../components/Elements/Header'
 import { HeaderLogoContainer } from '../components/Elements/Header/HeaderLogoContainer';
 import { Logo } from '../components/Elements/Logo';
@@ -12,6 +12,8 @@ import { useLanguage } from '../hooks/useLanguage'
 import { Title } from '../components/Typography/Title';
 import { HeaderSearchBarContainer } from '../components/Elements/Header/HeaderSearchBarContainer';
 import { SearchInput } from '../components/Elements/SearchInput';
+import { Aside } from '../components/Elements/Aside';
+import { AsideLink } from '../components/Elements/Aside/AsideLink';
 
 interface LayoutProps {
     children: React.ReactNode
@@ -58,9 +60,28 @@ export function Layout({ children }: LayoutProps) {
                         signOut={() => { }}
                     />
                 </HeaderAuthenticationContainer>
-
             </Header>
-            {children}
+            <Main>
+                <Aside>
+                    <AsideLink
+                        content='Home'
+                        url='/'
+                    />
+                    <AsideLink
+                        content='Favorites'
+                        url='/favorites'
+                    />
+                    <AsideLink
+                        content='Watch Later'
+                        url='/watchlater'
+                    />
+                    <AsideLink
+                        content='MyProfile'
+                        url='/profile'
+                    />
+                </Aside>
+                {children}
+            </Main>
         </Container>
     )
 }

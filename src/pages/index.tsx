@@ -1,10 +1,28 @@
 import { NextPage } from "next"
-import { Container } from "../styles"
+import { VideoCard } from "../components/Cards/VideoCard"
+import { Container, VideosContainer } from "../styles"
 
 const Home: NextPage = () => {
   return (
     <Container>
-      <p>okll</p>
+      <VideosContainer>
+        <VideoCard />
+        <VideoCard />
+        <VideoCard />
+        <VideoCard />
+        <VideoCard />
+        <VideoCard />
+        <VideoCard />
+        <VideoCard />
+        <VideoCard />
+        <VideoCard />
+        <VideoCard />
+        <VideoCard />
+        <VideoCard />
+        <VideoCard />
+        <VideoCard />
+        <VideoCard />
+      </VideosContainer>
     </Container>
   )
 }
