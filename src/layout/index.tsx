@@ -10,10 +10,8 @@ import * as ptBr from '../languages/ptBr'
 import * as enUS from '../languages/enUS'
 import { useLanguage } from '../hooks/useLanguage'
 import { Title } from '../components/Typography/Title';
-import { HeaderSearchBarContainer } from '../components/Elements/Header/HeaderSearchBarContainer';
-import { SearchInput } from '../components/Elements/SearchInput';
-import { Aside } from '../components/Elements/Aside';
-import { AsideLink } from '../components/Elements/Aside/AsideLink';
+import { HeaderLink } from '../components/Elements/Header/HeaderLink';
+import { HeaderLinksContainer } from '../components/Elements/Header/HeaderLinksContainer';
 
 interface LayoutProps {
     children: React.ReactNode
@@ -22,8 +20,6 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
 
     const { language } = useLanguage()
-    const { asPath } = useRouter()
-
     return (
         <Container>
             <Header>
@@ -35,15 +31,20 @@ export function Layout({ children }: LayoutProps) {
                         content='GetTube'
                     />
                 </HeaderLogoContainer>
-                {asPath === '/' &&
-                    <HeaderSearchBarContainer>
-                        <SearchInput
-                            value=''
-                            onChange={() => { }}
-                            placeholder='Search'
-                        />
-                    </HeaderSearchBarContainer>
-                }
+                <HeaderLinksContainer>
+                    <HeaderLink
+                        content='Home'
+                        url='/'
+                    />
+                    <HeaderLink
+                        content='Watch Later'
+                        url='/watchlater'
+                    />
+                    <HeaderLink
+                        content='MyProfile'
+                        url='/profile'
+                    />
+                </HeaderLinksContainer>
                 <HeaderAuthenticationContainer>
                     <AuthenticationManager
                         signInButtonTitle={
@@ -62,24 +63,6 @@ export function Layout({ children }: LayoutProps) {
                 </HeaderAuthenticationContainer>
             </Header>
             <Main>
-                <Aside>
-                    <AsideLink
-                        content='Home'
-                        url='/'
-                    />
-                    <AsideLink
-                        content='Favorites'
-                        url='/favorites'
-                    />
-                    <AsideLink
-                        content='Watch Later'
-                        url='/watchlater'
-                    />
-                    <AsideLink
-                        content='MyProfile'
-                        url='/profile'
-                    />
-                </Aside>
                 {children}
             </Main>
         </Container>

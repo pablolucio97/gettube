@@ -1,6 +1,7 @@
 import React from 'react';
 import { PrimaryButton } from '../components/Elements/PrimaryButton';
 import { YoutubePlayer } from '../components/Elements/YoutubePlayer';
+import { NextImage } from '../components/Next/NextImage';
 import { SubTitle } from '../components/Typography/SubTitle';
 import { Text } from '../components/Typography/Text';
 import { Title } from '../components/Typography/Title';
@@ -12,14 +13,16 @@ import {
     BsClockIcon,
     BsHeartIcon,
     BsShareIcon
-} from '../styles/player';
+} from '../styles/download';
 
 const Player = () => {
     return (
         <Container>
             <VideoContainer>
-                <YoutubePlayer
-                    videoId='G0x6DJ9eVsM'
+                <NextImage
+                    imgUrl='/'
+                    width={640}
+                    height={400}
                 />
                 <Title
                     content='Video1'
@@ -35,7 +38,6 @@ const Player = () => {
                 />
             </VideoContainer>
             <IconsContainer>
-                <BsHeartIcon />
                 <BsClockIcon />
                 <BsShareIcon />
             </IconsContainer>

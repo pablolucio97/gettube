@@ -1,39 +1,68 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    width: 100%;
+    width: 1080px;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 
-    & h1, h2, h3{
+    & h1{
         color: ${(props) => props.theme.colors.title};
+        margin: 2rem auto 1rem;
     }
     
     & p, span{
-        
         color: ${(props) => props.theme.colors.text};
     }
 
-    background-color: ${(props) => props.theme.colors.background_primary};
+    background-color: ${(props) => props.theme.colors.background_secondary};
 `
 
-export const VideosContainer = styled.main`
-    max-width: 1440px;
-    min-height: 100vh;
+export const SearchContainer = styled.div`
+    width: 848px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: ${(props) => props.theme.colors.background_primary};
+    border-radius: 4px;
+    margin: 0 auto 1rem;
+
+    & button{
+        color: ${(props) => props.theme.colors.text};
+        height: 56px;
+        font-size: ${({ theme }) => theme.sizes.large};
+    }
+`
+
+export const VideosContainer = styled.div`
+    max-width: 1080px;
+    max-height: 800px;
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-right: 140px;
-    padding: ${(props) => props.theme.sizes.huge} 0; 
-    @media(max-width: 1200px){
-        margin-right: 80px;
-    }
-    @media(max-width: 1024px){
-        margin-right: 28px;
-    }
-    @media(max-width: 768px){
-        width: 100%;
-        margin: 0 auto;
-    }
+    align-items: center;
+    padding: ${(props) => props.theme.sizes.huge}; 
+    margin: 0 auto;
+    & h3{
+    font-size: ${({ theme }) => theme.sizes.large};
+    width: 100%;
+    word-break: break-word;
+   }
+`
 
+export const VideoContainer = styled.div`
+display: flex;
+flex-direction: column;
+& h1{
+    margin-top: ${({ theme }) => theme.sizes.xxsmall};
+    font-size: ${({ theme }) => theme.sizes.small};
+}
+& h3{
+    margin-bottom: ${({ theme }) => theme.sizes.xxsmall};
+}
+& p:last-child{
+    margin-top:  0;
+}
+margin: 0 auto;
 `

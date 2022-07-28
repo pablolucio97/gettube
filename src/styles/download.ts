@@ -1,12 +1,15 @@
 import styled from 'styled-components'
-import { BsHeart, BsShare, BsClock } from 'react-icons/bs'
+import { BsShare, BsClock } from 'react-icons/bs'
 
 export const Container = styled.div`
-display: flex;
-justify-content: center;
-flex-direction: column;
-margin: -${({ theme }) => theme.sizes.huge} auto 0;
+width: 900px;
 min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+
+margin: -${({ theme }) => theme.sizes.huge} auto 0;
+background-color: ${({ theme }) => theme.colors.background_secondary};
 `
 
 export const VideoContainer = styled.div`
@@ -39,14 +42,6 @@ width: 320px;
 margin-top: ${({ theme }) => theme.sizes.xsmall};
 color: ${(props) => props.theme.colors.white100};
 }
-`
-
-export const BsHeartIcon = styled(BsHeart)`
-margin-top: ${({ theme }) => theme.sizes.xsmall};
-margin-right: ${({ theme }) => theme.sizes.small};
-width: 20px;
-height: 20px;
-cursor: pointer;
 `
 export const BsClockIcon = styled(BsClock)`
 margin-top: ${({ theme }) => theme.sizes.xsmall};

@@ -8,7 +8,7 @@ export const Container = styled.footer`
   justify-content: center;
   margin: 0 auto;
   padding: 32px;
-  @media (max-width: 1440px) {
+  @media (max-width: 1080px) {
     display: grid;
     grid-template-rows: 2fr;
     grid-template-columns: repeat(2, 2fr);
